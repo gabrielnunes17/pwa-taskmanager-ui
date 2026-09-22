@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f5c45" />
+    <title>Cadastro de tarefas</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Cadastro de tarefas</h1>
+        <p>Gerencie as tarefas cadastradas no sistema</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="painel">
+        <h2 id="titulo-formulario">Nova tarefa</h2>
+
+        <form id="form-task">
+          <input type="hidden" id="task-id" />
+
+          <label for="titulo">Título</label>
+          <input id="titulo" name="titulo" type="text" required />
+
+          <label for="descricao">Descrição</label>
+          <input id="descricao" name="descricao" type="text" required />
+
+          <label for="ativo">Status</label>
+          <label class="checkbox-status">
+            <input id="ativo" name="ativo" type="checkbox" checked />
+            <span>Concluído</span>
+          </label>
+
+          <div class="acoes-formulario">
+            <button type="submit" id="botao-salvar">Cadastrar</button>
+            <button type="button" id="botao-cancelar" class="secundario oculto">
+              Cancelar edição
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="painel">
+        <div class="cabecalho-lista">
+          <h2>Tarefas</h2>
+          <button type="button" id="botao-atualizar" class="secundario">
+            Atualizar lista
+          </button>
+        </div>
+
+        <form id="form-busca" class="busca">
+          <label for="busca-id">Buscar tarefa pelo ID</label>
+          <div class="linha-busca">
+            <input
+              id="busca-id"
+              type="text"
+              placeholder="Informe o ID da tarefa"
+            />
+            <button type="submit">Buscar</button>
+            <button type="button" id="botao-limpar-busca" class="secundario">
+              Listar todas
+            </button>
+          </div>
+        </form>
+
+        <p id="mensagem" role="status" aria-live="polite"></p>
+        <div id="lista-usuarios" class="lista-usuarios"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
