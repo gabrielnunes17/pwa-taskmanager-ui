@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/tasks";
+const API_URL = "https://pwa-taskmanager-api.onrender.com/tasks";
 
 const formulario = document.querySelector("#form-task");
 const campoId = document.querySelector("#task-id");
